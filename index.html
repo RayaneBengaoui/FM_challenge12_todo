@@ -19,11 +19,30 @@
     <title>Frontend Mentor | Todo app</title>
   </head>
   <body>
-    Todo
+    <main>
+      <div class="bg-img-container"></div>
+      <header>
+        <div class="logo">Todo</div>
+        <img src="./images/icon-moon.svg" alt="light/dark mode" />
+      </header>
+      <section class="create-todo">
+        <div class="border-circle"></div>
+        <input type="text" />
+      </section>
+      <section class="todo-list"></section>
+      <section class="todo-panel">
+        <div class="todo-panel__items">items</div>
+        <div class="todo-panel__state">
+          <button class="all-btn">All</button>
+          <button class="active-btn">Active</button>
+          <button class="completed-btn">Completed</button>
+        </div>
+        <div class="todo-panel__clear">
+          <button>Clear Completed</button>
+        </div>
+      </section>
+    </main>
 
-    <!-- Add dynamic number -->
-    items left All Active Completed Clear Completed Drag and drop to reorder
-    list
     <script src="./app.js"></script>
   </body>
 </html>
