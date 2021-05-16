@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Todo } from 'src/app/models/todo.model';
 import { TodosService } from 'src/app/services/todos.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo-list',
@@ -29,5 +30,9 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
   public get todos(): Todo[] {
     return this._todos;
+  }
+
+  drop(event: CdkDragDrop<{ description: String; status: Boolean }[]>) {
+    moveItemInArray(this._todos, event.previousIndex, event.currentIndex);
   }
 }

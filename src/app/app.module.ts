@@ -7,6 +7,7 @@ import { TodoListComponent } from './components/todos/todo-list/todo-list.compon
 import { HeaderComponent } from './components/todos/todo-edit/header/header.component';
 import { TodosService } from './services/todos.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TodoListComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, FormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule, DragDropModule],
   providers: [TodosService],
   bootstrap: [AppComponent],
 })
