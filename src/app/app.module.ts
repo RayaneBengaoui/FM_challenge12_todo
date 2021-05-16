@@ -6,6 +6,7 @@ import { TodoEditComponent } from './components/todos/todo-edit/todo-edit.compon
 import { TodoListComponent } from './components/todos/todo-list/todo-list.component';
 import { HeaderComponent } from './components/todos/todo-edit/header/header.component';
 import { TodosService } from './services/todos.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { TodosService } from './services/todos.service';
     TodoListComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule],
   providers: [TodosService],
   bootstrap: [AppComponent],
 })
