@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TodoEditComponent } from './components/todos/todo-edit/todo-edit.component';
 import { TodoListComponent } from './components/todos/todo-list/todo-list.component';
 import { HeaderComponent } from './components/todos/todo-edit/header/header.component';
+import { TodosService } from './services/todos.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { HeaderComponent } from './components/todos/todo-edit/header/header.comp
     HeaderComponent,
   ],
   imports: [BrowserModule],
-  providers: [],
+  providers: [TodosService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

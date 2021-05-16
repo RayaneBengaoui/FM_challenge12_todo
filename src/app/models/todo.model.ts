@@ -2,7 +2,7 @@ export class Todo {
   constructor(private _description: String, private _status: Boolean) {}
 
   public get description(): String {
-    return this.description;
+    return this._description;
   }
 
   public set description(description: String) {

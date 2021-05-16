@@ -9,15 +9,19 @@ import { TodosService } from 'src/app/services/todos.service';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-  private todos: Todo[];
-  private todosSubscription: Subscription;
+  private _todos: Todo[];
+  private _todosSubscription: Subscription;
 
   constructor(private todoService: TodosService) {
-    this.todos = [];
-    this.todosSubscription = new Subscription();
+    this._todos = [];
+    this._todosSubscription = new Subscription();
   }
 
   ngOnInit(): void {
-    this.todos = this.todoService.todos;
+    this._todos = this.todoService.todos;
+  }
+
+  public get todos(): Todo[] {
+    return this._todos;
   }
 }
