@@ -1,4 +1,9 @@
 <div class="header">
   <h1>TODO</h1>
-  <img src="../../../../../assets/icon-moon.svg" alt="moon" />
+  <img
+    #bgImage
+    [src]="backgroundImages.desktop.dark.path"
+    alt="moon"
+    (click)="onThemeChange()"
+  />
 </div>
