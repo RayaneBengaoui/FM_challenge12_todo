@@ -20,6 +20,7 @@ export class TodoListComponent implements OnInit, OnDestroy {
     this._todosSubscription = this.todoService.todosChanged.subscribe(
       (todos: Todo[]) => {
         this._todos = todos;
+        console.log('GAGNG');
       }
     );
   }
@@ -32,7 +33,9 @@ export class TodoListComponent implements OnInit, OnDestroy {
     return this._todos;
   }
 
-  drop(event: CdkDragDrop<{ description: String; status: Boolean }[]>) {
+  drop(event: CdkDragDrop<Todo[]>) {
+    console.log('avant : ', this._todos);
     moveItemInArray(this._todos, event.previousIndex, event.currentIndex);
+    console.log('après : ', this._todos);
   }
 }
