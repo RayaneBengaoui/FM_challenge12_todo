@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { DogAPI } from 'src/app/models/dog-api.interface';
 import { Todo } from 'src/app/models/todo.model';
 import { TodosService } from 'src/app/services/todos.service';
 
@@ -19,7 +20,12 @@ export class TodoEditComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.todoService.addTodo(new Todo(this.todoForm.value.description, false));
+    const description = this.todoForm.value.description;
+
+    this.todoService.fetchRandomShiba().subscribe((response: DogAPI) => {
+      this.todoService.addTodo(new Todo(description, false, response.message));
+    });
+
     this.todoForm.reset();
   }
 

@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/todos/todo-edit/header/header.comp
 import { TodosService } from './services/todos.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,13 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     TodoListComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, FormsModule, DragDropModule],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    DragDropModule,
+    HttpClientModule,
+  ],
   providers: [TodosService],
   bootstrap: [AppComponent],
 })

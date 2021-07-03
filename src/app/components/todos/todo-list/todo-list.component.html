@@ -2,6 +2,7 @@
   <ul cdkDropList (cdkDropListDropped)="drop($event)">
     <li *ngFor="let todo of todos" cdkDrag>
       {{ todo.description }}
+      <img *cdkDragPreview [src]="todo.imageLink" alt="shiba" />
     </li>
   </ul>
 </div>

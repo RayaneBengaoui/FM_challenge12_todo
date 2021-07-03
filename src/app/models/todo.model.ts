@@ -1,5 +1,9 @@
 export class Todo {
-  constructor(private _description: String, private _status: Boolean) {}
+  constructor(
+    private _description: String,
+    private _status: Boolean,
+    private _imageLink: String
+  ) {}
 
   public get description(): String {
     return this._description;
@@ -7,6 +11,14 @@ export class Todo {
 
   public set description(description: String) {
     this._description = description;
+  }
+
+  public get imageLink(): String {
+    return this._imageLink;
+  }
+
+  public set imageLink(imageLink: String) {
+    this._imageLink = imageLink;
   }
 
   public get status(): Boolean {
